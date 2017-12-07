@@ -23,6 +23,7 @@ $gray:                      #55595c;
 $gray-light:                #818a91;
 $gray-lighter:              #eceeef;
 $gray-lightest:             #f7f7f9;
+$dodger-blue: 				#19b5fe;
 
 $brand-primary:             #d9534f;
 $brand-success:             #5cb85c;
@@ -30,6 +31,13 @@ $brand-info:                #5bc0de;
 $brand-warning:             #f0ad4e;
 $brand-danger:              #d9534f;
 $brand-inverse:             $gray-dark;
+
+// Theme Colors
+$theme-colors: (
+
+   "primary": $dodger-blue,
+
+ );
 
 
 // Options
