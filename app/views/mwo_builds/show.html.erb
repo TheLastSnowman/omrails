@@ -1,0 +1,31 @@
+<div class="container">
+  <p>
+    <strong>User:</strong>
+    <%= @mwo_build.user %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @mwo_build.name %>
+  </p>
+
+  <p>
+    <strong>Mech:</strong>
+    <%= @mwo_build.mech %>
+  </p>
+
+  <p>
+    <strong>Url:</strong>
+    <%= @mwo_build.url %>
+  </p>
+
+  <p>
+    <strong>Comments:</strong>
+    <%= @mwo_build.comments %>
+  </p>
+
+  <%if @mwo_build.user == current_user %>
+    <%= link_to 'Edit', edit_mwo_build_path(@mwo_build) %> |
+  <% end %>
+  <%= link_to 'Back', mwo_builds_path %>
+</div>

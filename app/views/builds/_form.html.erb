@@ -1,0 +1,35 @@
+<%= form_with(model: build, local: true) do |form| %>
+  <% if build.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(build.errors.count, "error") %> prohibited this build from being saved:</h2>
+
+      <ul>
+      <% build.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :build_name, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :ship %>
+    <%= form.text_field :ship, id: :build_ship, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :build_url, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :comments %>
+    <%= form.text_area :comments, id: :build_comments, class: "form-control"  %>
+  </div>
+
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>

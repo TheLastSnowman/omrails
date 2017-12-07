@@ -1,0 +1,35 @@
+<%= form_with(model: mwo_build, local: true) do |form| %>
+  <% if mwo_build.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mwo_build.errors.count, "error") %> prohibited this mwo_build from being saved:</h2>
+
+      <ul>
+      <% mwo_build.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :mwo_build_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :mech %>
+    <%= form.text_field :mech, id: :mwo_build_mech, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :mwo_build_url, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :comments %>
+    <%= form.text_area :comments, id: :mwo_build_comments, class: "form-control" %>
+  </div>
+
+ <%= form.submit class: "btn btn-primary" %>
+<% end %>

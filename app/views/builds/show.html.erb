@@ -1,0 +1,31 @@
+<div class="container">
+	<p>
+	  <strong>User:</strong>
+	  <%= @build.user %>
+	</p>
+
+	<p>
+	  <strong>Name:</strong>
+	  <%= @build.name %>
+	</p>
+
+	<p>
+	  <strong>Ship:</strong>
+	  <%= @build.ship %>
+	</p>
+
+	<p>
+	  <strong>Url:</strong>
+	  <%= @build.url %>
+	</p>
+
+	<p>
+	  <strong>Comments:</strong>
+	  <%= @build.comments %>
+	</p>
+
+	<%if @build.user == current_user %>
+		<%= link_to 'Edit', edit_build_path(@build) %> |
+	<% end %>
+	<%= link_to 'Back', builds_path %>
+</div>
