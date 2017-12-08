@@ -4,6 +4,29 @@
             <h1>Welcome back!</h1>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="col-md-16 col-ed">
+                    <h2>Elite Dangerous</h2>
+                    <h4>Ship Builds</h4>
+                    <p> This is a place for you to browse and store the various builds you've come up with for ships in Elite Dangerous </p>
+                    <p><%= link_to "Ship Builds", builds_path, class: "btn btn-secondary" %></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-16 col-mwo">
+                    <h2>Mechwarrior Online</h2>
+                    <h4>Mech Builds </h4>
+                    <p><%= link_to "Mech Builds", mwo_builds_path, class: "btn btn-secondary" %></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-16">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+                </div>
 <% else %>
     <div class="jumbotron jumbotron-home">
         <div class="container">
@@ -14,17 +37,17 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-8">
                 <h2>Elite Dangerous</h2>
                 <p>Elite Dangerous Ship Builds </p>
-                <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+                <p><%= link_to "Ship Builds", builds_path, class: "btn btn-secondary" %></p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-8">
                 <h2>Mechwarrior Online</h2>
                 <p>Mechwarrior Online Mech Builds </p>
-                <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+                <p><%= link_to "Mech Builds", mwo_builds_path, class: "btn btn-secondary" %></p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-8">
                 <h2>Heading</h2>
                 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
                 <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
