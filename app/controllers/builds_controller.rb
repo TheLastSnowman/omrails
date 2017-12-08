@@ -2,13 +2,11 @@ class BuildsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /builds
-  # GET /builds.json
   def index
     @builds = Build.all
   end
 
   # GET /builds/1
-  # GET /builds/1.json
   def show
     @build = Build.find(params[:id])
   end
@@ -24,7 +22,6 @@ class BuildsController < ApplicationController
   end
 
   # POST /builds
-  # POST /builds.json
   def create
     @build = current_user.builds.new(build_params)
     if @build.save
@@ -35,7 +32,6 @@ class BuildsController < ApplicationController
   end
 
   # PATCH/PUT /builds/1
-  # PATCH/PUT /builds/1.json
   def update
     @build = current_user.builds.find(params[:id])
     if @build.update(build_params)
@@ -46,7 +42,6 @@ class BuildsController < ApplicationController
   end
 
   # DELETE /builds/1
-  # DELETE /builds/1.json
   def destroy
     @build = current_user.builds.find(params[:id])
     @build.destroy

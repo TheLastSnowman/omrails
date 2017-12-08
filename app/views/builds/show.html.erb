@@ -1,31 +1,21 @@
 <div class="container">
-	<p>
-	  <strong>User:</strong>
-	  <%= @build.user %>
-	</p>
-
-	<p>
-	  <strong>Name:</strong>
-	  <%= @build.name %>
-	</p>
-
-	<p>
-	  <strong>Ship:</strong>
-	  <%= @build.ship %>
-	</p>
-
-	<p>
-	  <strong>Url:</strong>
-	  <%= @build.url %>
-	</p>
-
-	<p>
-	  <strong>Comments:</strong>
-	  <%= @build.comments %>
-	</p>
-
-	<%if @build.user == current_user %>
-		<%= link_to 'Edit', edit_build_path(@build) %> |
-	<% end %>
-	<%= link_to 'Back', builds_path %>
+  <div class="row">
+    <div class="offset-md-2 col-md-8">
+      <div class="card boarder-dark">
+        <div class="card-body text-dark">
+          <h4 class="card-title text-dark"><%= @build.user.email %></h4>
+            <p class="card-text"><strong>Build Name:</strong> <%= @build.name %></p>
+            <p class="card-text"><strong>Ship:</strong> <%= @build.ship %></p>
+            <p class="card-text"><strong>URL:</strong> <%= @build.url %></p>
+            <p class="card-text"><strong>Comments:</strong> <%= @build.comments %></p>
+        </div>
+        <div class="card-footer text-primary">
+          <%if @build.user == current_user %>
+            <%= link_to 'Edit', edit_build_path(@build) %> |
+          <% end %>
+          <%= link_to 'Back', builds_path %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

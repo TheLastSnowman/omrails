@@ -1,43 +1,33 @@
 <div class="container">
 
-  <h1>Mechwarrior Online Builds</h1>
-
-  <table class="table table-inverse">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>User</th>
-        <th>Name</th>
-        <th>Mech</th>
-        <th>Url</th>
-        <th>Comments</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @mwo_builds.each do |mwo_build| %>
-        <tr>
-          <td><%= mwo_build.id %></td>
-          <td><%= mwo_build.user.email %></td>
-          <td><%= mwo_build.name %></td>
-          <td><%= mwo_build.mech %></td>
-          <td><%= mwo_build.url %></td>
-          <td><%= mwo_build.comments %></td>
-          <td><%= link_to 'Show', mwo_build %></td>
-          <% if mwo_build.user == current_user %>
-            <td><%= link_to 'Edit', edit_mwo_build_path(mwo_build) %></td>
-            <td><%= link_to 'Destroy', mwo_build, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card boarder-dark">
+        <img class="card-img-top" src="..." alt="card image cap">
+        <div class="card-body text-dark">
+          <h4 class="card-title text-dark">Your Account</h4>
+          <p class="card-text"> <%= current_user.email %> </p>
+        </div>
+        <div class="card-footer text-primary">
+          <a herf="#" class="card-link">Edit your account</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">  
+      <h1>Mechwarrior Online Builds</h1>
+      <% if user_signed_in? %>
+        <%= link_to 'New Mech Build', new_mwo_build_path %>
       <% end %>
-    </tbody>
-  </table>
-
-  <br>
-
-  <% if user_signed_in? %>
-    <%= link_to 'New Build', new_mwo_build_path %>
-  <% end %>
-
+      <ul class="list-group">
+        <% @mwo_builds.each do |mwo_build| %>
+          <%= link_to mwo_build, class: "list-group-item list-group-item-action list-group-item-light" do %>
+            <h5 class="list-group-item-heading text-dark"><strong><%= mwo_build.user.email %></strong></h5>
+            <p class="list-group-item-text text-dark""><strong>Build Name:</strong> <%= mwo_build.name %></p>
+            <p class="list-group-item-text text-dark""><strong>Mech:</strong> <%= mwo_build.mech %></p>
+            <p class="list-group-item-text text-dark""><strong>Comments:</strong> <%= mwo_build.comments %></p>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>

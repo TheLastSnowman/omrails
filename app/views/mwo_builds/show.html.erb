@@ -1,31 +1,22 @@
 <div class="container">
-  <p>
-    <strong>User:</strong>
-    <%= @mwo_build.user %>
-  </p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= @mwo_build.name %>
-  </p>
-
-  <p>
-    <strong>Mech:</strong>
-    <%= @mwo_build.mech %>
-  </p>
-
-  <p>
-    <strong>Url:</strong>
-    <%= @mwo_build.url %>
-  </p>
-
-  <p>
-    <strong>Comments:</strong>
-    <%= @mwo_build.comments %>
-  </p>
-
-  <%if @mwo_build.user == current_user %>
-    <%= link_to 'Edit', edit_mwo_build_path(@mwo_build) %> |
-  <% end %>
-  <%= link_to 'Back', mwo_builds_path %>
+  <div class="row">
+    <div class="offset-md-2 col-md-8">
+      <div class="card boarder-dark">
+        <div class="card-body text-dark">
+          <h4 class="card-title text-dark"><%= @mwo_build.user.email %></h4>
+            <p class="card-text"><strong>Build Name:</strong> <%= @mwo_build.name %></p>
+            <p class="card-text"><strong>Mech:</strong> <%= @mwo_build.mech %></p>
+            <p class="card-text"><strong>URL:</strong> <%= @mwo_build.url %></p>
+            <p class="card-text"><strong>Comments:</strong> <%= @mwo_build.comments %></p>
+        </div>
+        <div class="card-footer text-primary">
+          <%if @mwo_build.user == current_user %>
+            <%= link_to 'Edit', edit_mwo_build_path(@mwo_build) %> |
+            <%= link_to 'Delete', @mwo_build, method: :delete, data: { confirm: 'Are you sure?' } %> |
+          <% end %>
+          <%= link_to 'Back', mwo_builds_path %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
