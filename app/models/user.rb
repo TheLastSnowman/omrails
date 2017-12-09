@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :tweets
   has_many :builds
   has_many :mwo_builds
+
+  validates :username, presence: true, uniqueness: true
 end
