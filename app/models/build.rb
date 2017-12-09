@@ -3,6 +3,6 @@ class Build < ApplicationRecord
 
   validates :name, presence: true
   validates :user, presence: true
-  validates :mech, presence: true
+  validates :ship, presence: true
   validates :url, presence: true
 end
