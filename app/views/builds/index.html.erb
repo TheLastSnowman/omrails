@@ -6,10 +6,11 @@
         <img class="card-img-top" src="..." alt="card image cap">
         <div class="card-body text-dark">
           <h4 class="card-title text-dark">Your Account</h4>
+          <p class="card-text"><%= current_user.username %></p>
           <p class="card-text"><%= current_user.email %></p>
         </div>
         <div class="card-footer text-primary">
-          <a herf="#" class="card-link">Edit your account</a>
+          <a class="card-link"><%= link_to 'Edit your account', user_path(current_user.username) %></a>
         </div>
       </div>
     </div>
@@ -21,7 +22,7 @@
       <ul class="list-group">
         <% @builds.each do |build| %>
           <%= link_to build, class: "list-group-item list-group-item-action list-group-item-light" do %>
-            <h5 class="list-group-item-heading text-dark"><strong><%= build.user.email %></strong></h5>
+            <h5 class="list-group-item-heading text-dark"><strong> Submitted by:</strong> <%= build.user.username %></strong></h5>
             <p class="list-group-item-text text-dark""><strong>Build Name:</strong> <%= build.name %></p>
             <p class="list-group-item-text text-dark""><strong>Ship:</strong> <%= build.ship %></p>
             <p class="list-group-item-text text-dark""><strong>Comments:</strong> <%= build.comments %></p>

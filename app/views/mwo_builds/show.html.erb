@@ -3,7 +3,7 @@
     <div class="offset-md-2 col-md-8">
       <div class="card boarder-dark">
         <div class="card-body text-dark">
-          <h4 class="card-title text-dark"><%= @mwo_build.user.email %></h4>
+          <h4 class="card-title text-dark"><%= link_to @mwo_build.user.username, user_path(@mwo_build.user.username) %></h4>
             <p class="card-text"><strong>Build Name:</strong> <%= @mwo_build.name %></p>
             <p class="card-text"><strong>Mech:</strong> <%= @mwo_build.mech %></p>
             <p class="card-text"><strong>URL:</strong> <%= @mwo_build.url %></p>

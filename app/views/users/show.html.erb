@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card boarder-dark">
+        <img class="card-img-top" src="..." alt="card image cap">
+        <div class="card-body text-dark">
+          <h4 class="card-title text-dark"><%= @user.username %></h4>
+          <% if current_user.admin = true %>
+          	<h4 class="card-title text-dark"><%= @user.email %></h4>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">  
+      <h3>Mechwarrior Online Builds</h3>
+      <ul class="list-group">
+        <% @mwo_builds.each do |mwo_build| %>
+          <%= link_to mwo_build, class: "list-group-item list-group-item-action list-group-item-light" do %>
+            <p class="list-group-item-text text-dark""><strong>Build Name:</strong> <%= mwo_build.name %></p>
+            <p class="list-group-item-text text-dark""><strong>Mech:</strong> <%= mwo_build.mech %></p>
+            <p class="list-group-item-text text-dark""><strong>Comments:</strong> <%= mwo_build.comments %></p>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+     <div class="col-md-4">  
+      <h3>Elite Dangerous Ship Builds</h3>
+      <ul class="list-group">
+        <% @builds.each do |build| %>
+          <%= link_to build, class: "list-group-item list-group-item-action list-group-item-light" do %>
+            <p class="list-group-item-text text-dark""><strong>Build Name:</strong> <%= build.name %></p>
+            <p class="list-group-item-text text-dark""><strong>Ship:</strong> <%= build.ship %></p>
+            <p class="list-group-item-text text-dark""><strong>Comments:</strong> <%= build.comments %></p>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
