@@ -5,14 +5,16 @@
         <img class="card-img-top" src="..." alt="card image cap">
         <div class="card-body text-dark">
           <h4 class="card-title text-dark"><%= @user.username %></h4>
-          <% if current_user.admin = true %>
+          <% if user_signed_in? && current_user.admin = true %>
           	<h4 class="card-title text-dark"><%= @user.email %></h4>
           <% end %>
-          <% if current_user.following?(@user) %>
-            <p class="card-text"><%= link_to "Unfollow", unfollow_user_path(@user.username), method: :delete %></p>
-          <% else %>
-            <p class="card-text"><%= link_to "Follow", follow_user_path(@user.username), method: :post %></p>
-          <%end %>
+          <% if user_signed_in? %>
+            <% if current_user.following?(@user) %>
+              <p class="card-text"><%= link_to "Unfollow", unfollow_user_path(@user.username), method: :delete %></p>
+            <% else %>
+              <p class="card-text"><%= link_to "Follow", follow_user_path(@user.username), method: :post %></p>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
