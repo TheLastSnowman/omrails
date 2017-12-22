@@ -23,6 +23,7 @@
             <p class="list-group-item-text text-dark""><strong>Build Name:</strong> <%= mwo_build.name %></p>
             <p class="list-group-item-text text-dark""><strong>Mech:</strong> <%= mwo_build.mech %></p>
             <p class="list-group-item-text text-dark""><strong>Comments:</strong> <%= mwo_build.comments %></p>
+            <p class="list-group-item-text text-dark"">Likes: <%= mwo_build.get_upvotes.size %> | Dislikes: <%= mwo_build.get_downvotes.size %></p>
           <% end %>
         <% end %>
       </ul>
@@ -36,6 +37,7 @@
             <p class="list-group-item-text text-dark""><strong>Build Name:</strong> <%= build.name %></p>
             <p class="list-group-item-text text-dark""><strong>Ship:</strong> <%= build.ship %></p>
             <p class="list-group-item-text text-dark""><strong>Comments:</strong> <%= build.comments %></p>
+            <p class="list-group-item-text text-dark"">Likes: <%= build.get_upvotes.size %> | Dislikes: <%= build.get_downvotes.size %></p>
           <% end %>
         <% end %>
       </ul>

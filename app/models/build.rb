@@ -5,4 +5,6 @@ class Build < ApplicationRecord
   validates :user, presence: true
   validates :ship, presence: true
   validates :url, presence: true
+
+  acts_as_votable
 end

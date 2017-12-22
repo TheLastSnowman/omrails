@@ -16,8 +16,24 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :mwo_builds
-  resources :builds
+  resources :mwo_builds do
+    member do
+      post 'vote', to: 'votes#create_upvote'
+      post 'downvote', to: 'votes#create_downvote'
+      delete 'unvote', to: 'votes#destroy_upvote'
+      delete 'undownvote', to: 'votes#destroy_downvote'
+    end
+  end
+
+  resources :builds do
+    member do
+      post 'vote', to: 'votes#create_upvote'
+      post 'downvote', to: 'votes#create_downvote'
+      delete 'unvote', to: 'votes#destroy_upvote'
+      delete 'undownvote', to: 'votes#destroy_downvote'
+    end
+  end
+
   resources :tweets
   root 'pages#home'
   get 'about', to: 'pages#about'

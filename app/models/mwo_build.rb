@@ -4,4 +4,6 @@ class MwoBuild < ApplicationRecord
   validates :user, presence: true
   validates :mech, presence: true
   validates :url, presence: true
+
+  acts_as_votable
 end
