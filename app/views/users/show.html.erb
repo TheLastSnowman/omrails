@@ -3,7 +3,7 @@
     <div class="col-md-4">
       <div class="card boarder-dark">
         <div class="card-body text-dark">
-          <center><%= image_tag @user.avatar, class: "image-fluid" %></center>
+          <center><%= image_tag @user.avatar.url(:medium) %></center>
           <h4 class="card-title text-dark"><%= @user.username %></h4>
           <% if user_signed_in? && current_user.admin = true %>
           	<h4 class="card-title text-dark"><%= @user.email %></h4>
