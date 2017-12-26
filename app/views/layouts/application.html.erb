@@ -21,7 +21,11 @@
         </ul>
         <ul class="navbar-nav">
           <% if user_signed_in? %>
+            <li class="nav-item"><%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "Log out", signout_path, method: :delete, class: "nav-link" %></li>
+            <% if current_user.avatar.present? %>
+              <%= image_tag current_user.avatar.url, class: "img-fluid" %>
+            <% end %>
           <%else%>
             <li class="nav-item"><%= link_to "Sign in", signin_path, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "Sign up", signup_path, class: "btn btn-primary" %></li>

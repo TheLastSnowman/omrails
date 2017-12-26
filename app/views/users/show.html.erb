@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-4">
       <div class="card boarder-dark">
-        <img class="card-img-top" src="..." alt="card image cap">
         <div class="card-body text-dark">
+          <center><%= image_tag @user.avatar, class: "image-fluid" %></center>
           <h4 class="card-title text-dark"><%= @user.username %></h4>
           <% if user_signed_in? && current_user.admin = true %>
           	<h4 class="card-title text-dark"><%= @user.email %></h4>

@@ -3,9 +3,9 @@
     <div class="col-md-4">
       <div class="card boarder-dark">
         <% if user_signed_in? %>
-          <img class="card-img-top" src="..." alt="card image cap">
           <div class="card-body text-dark">
             <h4 class="card-title text-dark">Your Account</h4>
+            <center><%= image_tag current_user.avatar, class: "image-fluid" %></center>
             <p class="card-text"><%= current_user.username %></p>
             <p class="card-text"><%= current_user.email %></p>
           </div>

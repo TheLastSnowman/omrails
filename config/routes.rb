@@ -40,5 +40,6 @@ Rails.application.routes.draw do
   get 'contact-us', to: 'pages#contact_us'
   get 'builds', to: 'builds#index'
   get 'mwo_builds', to: 'mwo_builds#index'
+  get 'feed', to: 'feed#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
