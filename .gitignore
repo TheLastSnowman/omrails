@@ -26,3 +26,5 @@
 
 #Ignore public system folder.
 public/system
+# Ignore application configuration
+/config/application.yml

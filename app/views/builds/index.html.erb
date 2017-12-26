@@ -5,7 +5,9 @@
         <% if user_signed_in? %>
           <div class="card-body text-dark">
             <h4 class="card-title text-dark">Your Account</h4>
-            <center><%= image_tag current_user.avatar.url(:medium) %></center>
+            <% if current_user.avatar.present? %>
+              <center><%= image_tag current_user.avatar.url(:medium) %></center>
+            <% end %>
             <p class="card-text"><%= current_user.username %></p>
             <p class="card-text"><%= current_user.email %></p>
           </div>
