@@ -6,7 +6,7 @@
           <h4 class="card-title text-dark"><%= link_to @mwo_build.user.username, user_path(@mwo_build.user.username) %></h4>
             <p class="card-text"><strong>Build Name:</strong> <%= @mwo_build.name %></p>
             <p class="card-text"><strong>Mech:</strong> <%= @mwo_build.mech %></p>
-            <p class="card-text"><strong>URL:</strong> <%= @mwo_build.url %></p>
+            <p class="card-text"><strong>URL:</strong> <%= link_to(truncate(@mwo_build.url, :length => 140), @mwo_build.url) %></p>
             <p class="card-text"><strong>Comments:</strong> <%= @mwo_build.comments %></p>
             <p class="card-text">Likes: <%= @mwo_build.get_upvotes.size %> | Dislikes: <%= @mwo_build.get_downvotes.size %></p>
         </div>  
